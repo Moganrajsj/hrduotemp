@@ -16,9 +16,18 @@ foreach (['/tmp/views', '/tmp/cache', '/tmp/sessions', '/tmp/storage'] as $direc
 }
 
 $bundledDatabase = __DIR__.'/../database/database.sqlite';
+$runtimeDatabase = '/tmp/database.sqlite';
 
-if (is_file($bundledDatabase) && ! is_file('/tmp/database.sqlite')) {
-    @copy($bundledDatabase, '/tmp/database.sqlite');
+if (is_file($bundledDatabase) && ! is_file($runtimeDatabase)) {
+    // Copy to a per-process temp file and rename it into place so concurrent
+    // cold-start requests never read a partially copied database.
+    $temporaryDatabase = '/tmp/database.sqlite.'.getmypid().'.tmp';
+
+    if (@copy($bundledDatabase, $temporaryDatabase)) {
+        @rename($temporaryDatabase, $runtimeDatabase);
+    }
+
+    @unlink($temporaryDatabase);
 }
 
 require __DIR__.'/../public/index.php';

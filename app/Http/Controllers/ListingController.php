@@ -84,7 +84,11 @@ class ListingController extends Controller
         ]);
 
         if ($request->hasFile('logo')) {
-            $fields['logo'] = $request->file('logo')->store('logos', 'public');
+            $logo = $this->storeLogo($request->file('logo'));
+
+            if ($logo !== null) {
+                $fields['logo'] = $logo;
+            }
         }
 
         $fields['user_id'] = auth()->id();
@@ -139,7 +143,11 @@ class ListingController extends Controller
         ]);
 
         if ($request->hasFile('logo')) {
-            $fields['logo'] = $request->file('logo')->store('logos', 'public');
+            $logo = $this->storeLogo($request->file('logo'));
+
+            if ($logo !== null) {
+                $fields['logo'] = $logo;
+            }
         }
 
         $listing->update($fields);
@@ -172,6 +180,20 @@ class ListingController extends Controller
         return view('manage', [
             'listings' => Listing::orderBy('id', 'DESC')->get()
         ]);
+    }
+
+    /**
+     * Store an uploaded logo, tolerating read-only filesystems (serverless).
+     */
+    private function storeLogo(\Illuminate\Http\UploadedFile $file): ?string
+    {
+        try {
+            return $file->store('logos', 'public');
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::warning('Logo upload skipped: storage is not writable: ' . $e->getMessage());
+
+            return null;
+        }
     }
 
     /**

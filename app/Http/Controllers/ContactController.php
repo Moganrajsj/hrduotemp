@@ -49,11 +49,23 @@ class ContactController extends Controller
             'message.min' => 'Your message must be at least 5 characters.',
         ]);
 
-        // Process uploaded resume file for attachment
+        // Process uploaded resume file for attachment.
+        // Serverless hosts (Vercel) mount the application read-only outside
+        // /tmp, so fall back to the uploaded temporary file if the disk
+        // cannot be written to instead of failing the whole request.
         $resumeFile = $request->file('resume');
         $originalFilename = $resumeFile->getClientOriginalName();
-        $storedPath = $resumeFile->store('resumes', 'public');
-        $fullPath = storage_path('app/public/' . $storedPath);
+        $fullPath = $resumeFile->getRealPath();
+
+        try {
+            $storedPath = $resumeFile->store('resumes', 'public');
+
+            if ($storedPath) {
+                $fullPath = storage_path('app/public/' . $storedPath);
+            }
+        } catch (\Throwable $e) {
+            Log::warning('Resume could not be stored on disk; using uploaded temp file: ' . $e->getMessage());
+        }
 
         // Prepare email data
         $inquiryData = [
