@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Listing;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 
@@ -19,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-       Listing::factory(20)->create();
+        $this->call(EnglishListingsSeeder::class);
         
         DB::table('users')->insert([
             'id' => 1,
