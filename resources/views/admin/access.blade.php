@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Admin Access Management - Job Agency Website')
+@section('title', 'Admin Access Management - HR DUO Careers')
 
 @section('content')
 

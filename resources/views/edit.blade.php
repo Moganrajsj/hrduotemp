@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Edit: ' . $listing->title . ' - The HR Duo')
+@section('title', 'Edit: ' . $listing->title . ' - HR DUO Careers')
 
 @section('content')
 

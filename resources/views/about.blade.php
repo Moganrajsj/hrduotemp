@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'About Us - The HR Duo')
+@section('title', 'About Us - HR DUO Careers')
 
 @section('content')
 
@@ -25,7 +25,7 @@
             <div class="col-md-6 align-self-center">
               <div class="right-content">
                 <span>Who We Are</span>
-                <h2>Get to know about <em>The HR Duo</em></h2>
+                <h2>Get to know about <em>HR DUO Careers</em></h2>
                 <p>We are dedicated to revolutionizing the job search and hiring experience. Our platform connects skilled professionals with top-tier organizations seeking exceptional talent across multiple industries and domains.</p>
                 <br>
                 <p>Whether you are searching for your first internship, transitioning into engineering, or scaling your company's workforce, we provide the tools, guidance, and network to ensure lasting success.</p>

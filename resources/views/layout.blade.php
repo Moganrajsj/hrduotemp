@@ -5,11 +5,11 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Job Agency Website">
+    <meta name="description" content="HR DUO Careers">
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>@yield('title', 'The HR Duo')</title>
+    <title>@yield('title', 'HR DUO Careers')</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -58,7 +58,7 @@
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="/"><h2>The <em> HR DUO</em></h2></a>
+          <a class="navbar-brand" href="/"><h2>HR DUO <em>Careers</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -122,7 +122,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 footer-item">
-            <h4>The HR Duo</h4>
+            <h4>HR DUO Careers</h4>
             <p>Connecting exceptional talent with premier companies worldwide through modern recruitment solutions.</p>
             <ul class="social-icons">
               <li><a href="https://www.instagram.com/the.hr_duo"><i class="fa fa-instagram"></i></a></li>
@@ -170,7 +170,7 @@
         <div class="row">
           <div class="col-md-12">
             <p>
-                Copyright © 2026 The HR Duo Website
+                Copyright © 2026 HR DUO Careers Website
             </p>
           </div>
         </div>

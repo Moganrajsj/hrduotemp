@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'The HR Duo - Home')
+@section('title', 'HR DUO Careers - Home')
 
 @section('content')
 
@@ -133,8 +133,8 @@
         <div class="col-md-6 align-self-center">
           <div class="right-content">
             <span>Who we are</span>
-            <h2>Get to know about <em>The HR Duo</em></h2>
-            <p>The HR Duo was founded by two passionate HR professionals with a vision to simplify recruitment, empower job seekers and connect organisations with right talent. With experience in Talent Acquisition, HR Operations, Employee Relations and the complete Hire-to-Retire lifecycle, we bring practical industry insights to individuals and businesses.</p>
+            <h2>Get to know about <em>HR DUO Careers</em></h2>
+            <p>HR DUO Careers was founded by two passionate HR professionals with a vision to simplify recruitment, empower job seekers and connect organisations with right talent. With experience in Talent Acquisition, HR Operations, Employee Relations and the complete Hire-to-Retire lifecycle, we bring practical industry insights to individuals and businesses.</p>
             <a href="/about" class="filled-button">Read More</a>
           </div>
         </div>

@@ -23,7 +23,7 @@
 <body>
   <div class="container">
     <div class="header">
-      <h2>Job Agency Website</h2>
+      <h2>HR DUO Careers</h2>
       <p>New Candidate Contact &amp; Service Inquiry</p>
     </div>
 
@@ -78,7 +78,7 @@
     </div>
 
     <div class="footer">
-      This inquiry was submitted from the Contact Us form on {{ config('app.name', 'Job Agency') }} on {{ now()->format('F j, Y, g:i a') }}.
+      This inquiry was submitted from the Contact Us form on {{ config('app.name', 'HR DUO Careers') }} on {{ now()->format('F j, Y, g:i a') }}.
     </div>
   </div>
 </body>

@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Blog - The HR Duo')
+@section('title', 'Blog - HR DUO Careers')
 
 @section('content')
 
